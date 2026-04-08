@@ -130,6 +130,10 @@ b = data.pop(0)
 print(data)
 print(a,b)
 
+# b = []
+# b.pop()
+# print(b)  This brings IndexError.
+
 # Clear
 print("....."*10)
 print("Clear Operation")
