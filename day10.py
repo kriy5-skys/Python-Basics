@@ -7,8 +7,12 @@ a =["Krishnaa"]
 print(type(data))
 print(data[-1][-1]) # To extract value from list inside list
 
+data = [1, 2, 3, 4, 5, [6,7,8,9,10], "Krishnaa"]
+print((data))
+print(data[-1][-1])
+
 a = "Krishnaa"
-print(a[-1])  # Indexing and len() work in string as well
+print(a[-3])  # Indexing and len() work in string as well
 
 # Data type: Dictionary
 print("....."*10)
@@ -30,7 +34,7 @@ data = {
     "name":"Krishnaa"
     } # If duplicate keys, then the 1st is replaced by the latest.
 
-print(len(data))  # Shows the number of key-value pairs.
+print("Length of the dictionary is: ",len(data))  # Shows the number of key-value pairs.
 
 # in-built polymorphism: Like in len(), it works differently in list, string and dictionary data type.
 # So, in-built polymorphism
@@ -55,8 +59,19 @@ data.update(
 print(data)
 
 # Functions in Dictionary
+print("....."*10)
+print("Funtions in Dictionary")
+
+print("Indexing")
 data1 = {'name': 'kri', 'age': 25, 'Number': 12211, 'number': 98737223, 'number1': 9102, 'address': 'bagbazaar'}
-print(data1["name"])  #Indexing bt must have key as index.
+print(data1["age"])  # Indexing but must have key as index.
+# print(data1['nepal']) 
+# //KeyError occurs as key doesnot exist, but not makes new key.
+
+data2 = {'name': 'kri', 'Number': 12211, 'number': 98737223, 'number1': 9102, 'address': 'bagbazaar'}
+# print(data2['age'])  # KeyError
+
+print("Keys and Values")
 
 a = data1.keys()  # to list keys of the dictionary.
 print(a)
@@ -72,6 +87,23 @@ print(list(data1.values())[0])  # Requires typecasting
 # Delete operations in Dictionary
 print("....."*10)
 print("Delete Operations in Dictionary")
+
+# del
+del data2['age']
+
+# pop()
+data2.pop('name')
+
+# popitem
+data2.popitem()
+
+
+# clear
+data2.clear()
+
+print(data2)
+
+
 # del
 
 
@@ -87,7 +119,13 @@ data1.clear()
 print(data1)
 
 data2 = {'name': 'kri', 'Number': 12211, 'number': 98737223, 'number1': 9102, 'address': 'bagbazaar'}
-# print(data2['age']) #keyerror
+data2 = {'name': 'suman', 'suname': 'testing', 'age': 100, 'number': 6000, 'number1': 980, 'address': 'nepal'}
+# print(data2['age'])
+number = data2.get('numbers',"key not found")
+num = data2.get('numbers')
+avg = 0
+print(num, number)
+
 
 number = data2.get('numbers',"key not found")
 num = data2.get('numbers')  #it shows nonetype
@@ -110,13 +148,13 @@ data3 = {
 }
 print(data3)
 
+# Single line output
+print(f'The balance is: {data['phone']['Ncell']['balance']}')
+
 phone = data3['phone']
 ncell = phone['Ncell']
 balance = ncell['balance']
 print(f'The balance is: {balance}')
-
-# Single line output
-print(f'The balance is: {phone['Ncell']['balance']}') 
 
 # Task
 print("....."*10)
@@ -135,6 +173,11 @@ user = {
     ]
 }
 
+print(f'''
+{user['name']} {user['phone'][1]['type']} number is {user['phone'][1]['number']}
+{user['name']} {user['phone'][0]['type']} number is {user['phone'][0]['number']}
+''')
+
 name = user['name']
 phone = user['phone']
 
@@ -151,10 +194,6 @@ print(f'''
 {name} {type2} number is {number2}.
 ''')
 
-print(f'''
-{user['name']} {user['phone'][1]['type']} number is {user['phone'][1]['number']}
-{user['name']} {user['phone'][0]['type']} number is {user['phone'][0]['number']}
-''')
 # output
 '''
 Hari NCELL number is 980
