@@ -24,7 +24,7 @@ elif (gpa > 3.2 and gpa <= 3.6):
     print("Congratulations! You have got an A.")
 elif (gpa > 2.8 and gpa <= 3.2):
     print("Congratulations! You have got a B+.")
-elif (2.0 <= gpa < 2.4):  # Range in conditions as given also work.
+elif (2.4 < gpa <= 2.8):  # Range in conditions as given also work.
     print("Congratulations! You have got a B.")
 elif (gpa > 2.0 and gpa <= 2.4):
     print("Congratulations! You have got a C+.")
