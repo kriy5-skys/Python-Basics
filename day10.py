@@ -87,35 +87,22 @@ print(list(data1.values())[0])  # Requires typecasting
 # Delete operations in Dictionary
 print("....."*10)
 print("Delete Operations in Dictionary")
+data1 = {'name': 'kri', 'age': 25, 'Number': 12211, 'number': 98737223, 'number1': 9102, 'address': 'bagbazaar'}
 
-# del
-del data2['age']
+# del: to delete the key given.
+del data1['age']
+print(data1)
 
-# pop()
-data2.pop('name')
+# pop(): to delete
+data1.pop('name')
+print(data1)
 
-# popitem
-data2.popitem()
+# popitem: delete last item
+data1.popitem()
+print(data1)
 
-
-# clear
-data2.clear()
-
-print(data2)
-
-
-# del
-
-
-# pop
-
-
-# popitem
-
-
-#clear
+# clear: clear the dictionary into empty.
 data1.clear()
-
 print(data1)
 
 data2 = {'name': 'kri', 'Number': 12211, 'number': 98737223, 'number1': 9102, 'address': 'bagbazaar'}
@@ -128,11 +115,13 @@ print(num, number)
 
 
 number = data2.get('numbers',"key not found")
-num = data2.get('numbers')  #it shows nonetype
+num = data2.get('numbers')  # it shows nonetype
 name = data2.get('name')
 
 print(num, number, name)
 print(type(num))  # As this is NoneType, it is required to have a msg to avoid error.
+# Rather than NoneType, it is need to have msg 
+# because NoneType creates more error.
 
 # Nested Dictionary
 print("....."*10)
@@ -149,7 +138,7 @@ data3 = {
 print(data3)
 
 # Single line output
-print(f'The balance is: {data['phone']['Ncell']['balance']}')
+print(f'The balance is: {data3['phone']['Ncell']['balance']}')
 
 phone = data3['phone']
 ncell = phone['Ncell']
