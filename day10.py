@@ -65,16 +65,18 @@ print("Funtions in Dictionary")
 print("Indexing")
 data1 = {'name': 'kri', 'age': 25, 'Number': 12211, 'number': 98737223, 'number1': 9102, 'address': 'bagbazaar'}
 print(data1["age"])  # Indexing but must have key as index.
+# Prints value of the given index (key)
 # print(data1['nepal']) 
 # //KeyError occurs as key doesnot exist, but not makes new key.
 
-data2 = {'name': 'kri', 'Number': 12211, 'number': 98737223, 'number1': 9102, 'address': 'bagbazaar'}
-# print(data2['age'])  # KeyError
-
+# data2 = {'name': 'kri', 'Number': 12211, 'number': 98737223, 'number1': 9102, 'address': 'bagbazaar'}
+# print(data2['age'])  //KeyError
+print("....."*10)
 print("Keys and Values")
-
+data1 = {'name': 'kri', 'age': 25, 'Number': 12211, 'number': 98737223, 'number1': 9102, 'address': 'bagbazaar'}
 a = data1.keys()  # to list keys of the dictionary.
-print(a)
+print(a,"\n")
+
 print(type(a)) # Output: <class 'dict_keys'>
 # print(a[0]) # TypeError occurs as this doesnot returns the value, and is not a list.
 # So, requires typecasting.
@@ -87,32 +89,28 @@ print(list(data1.values())[0])  # Requires typecasting
 # Delete operations in Dictionary
 print("....."*10)
 print("Delete Operations in Dictionary")
-data1 = {'name': 'kri', 'age': 25, 'Number': 12211, 'number': 98737223, 'number1': 9102, 'address': 'bagbazaar'}
 
+data1 = {'name': 'kri', 'age': 25, 'Number': 12211, 'number': 98737223, 'number1': 9102, 'address': 'bagbazaar'}
 # del: to delete the key given.
 del data1['age']
 print(data1)
 
-# pop(): to delete
-data1.pop('name')
-print(data1)
+# pop(): to delete the key and value pair by giving the key.a
+# Can store the popped data.
+a = data1.pop('name')
+print("\nPopped data is: ",a)
 
 # popitem: delete last item
-data1.popitem()
+b = data1.popitem()
+print("Pop_item data is: ", b)  #//last key-value deleted.
 print(data1)
 
 # clear: clear the dictionary into empty.
 data1.clear()
-print(data1)
+print("The dictionary is cleared!!: ",data1)
 
 data2 = {'name': 'kri', 'Number': 12211, 'number': 98737223, 'number1': 9102, 'address': 'bagbazaar'}
-data2 = {'name': 'suman', 'suname': 'testing', 'age': 100, 'number': 6000, 'number1': 980, 'address': 'nepal'}
 # print(data2['age'])
-number = data2.get('numbers',"key not found")
-num = data2.get('numbers')
-avg = 0
-print(num, number)
-
 
 number = data2.get('numbers',"key not found")
 num = data2.get('numbers')  # it shows nonetype
