@@ -37,4 +37,4 @@ with open("data.csv", "r") as file:
 
 print(a)
 
-
+# r+ w+ a+
