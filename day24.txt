@@ -1,0 +1,90 @@
+XAMPP
+-> MySQL: to store Database
+-> Database: It means multiple tables,
+single table can also be known though multiple.
+# It is actually where we store data in form of structures.
+
+Apache: The Web Server
+
+-> managerOSx -> Manage Servers -> Start the MySQl Database and Apache Web Server
+Then,
+-> Open Chrome; in URL; enter localhost
+-> Then, open phpMyAdmin in the top bar.
+-> Open Database; Create Database; Write name related to it.
+-> Create New Table, write name, and number of columns for headings.
+-> List headings;
+1. id: this should be included in every table: because it gives unique identity.
+-> it should have index as primary; which means increasing and unique, 
+then A_I should be "on"; because it must be Auto_increment; means auto increasing
+
+Here, after creating table, we should give column headings,
+-> name: name of the column
+-> type: type of data to be inserted in the column
+# VARCHAR: for string, this is for string
+# INT: for integers; there are different type of integers as well; 
+like tinyint, smallint; which takes the range of values accordingly.
+# DATE; data type is also there for the "date" values
+# Also, FLOAT
+
+->length/values: this defines the length of the data to be inserted, like for 
+-> default: to give default values in it.
+-> collation
+-> attributes
+-> NULL
+-> Index: to insert the unique number for it
+-> A_I: Auto Increment
+
+# Create headings for the table; where we created the structure for the Database
+-> There are 4 operations: Create, Read, Update, Delete
+-> Now, Insert DATA in it using "Insert" in it.
+Syntax:
+INSERT INTO `ExchangeRate` (`id`, `date`, `iso3`, `name`, `unit`, `buy`, `sell`) VALUES (NULL, '2026-04-01', 'NEP', 'Nepal', '1', '150', '150');
+
+# To read the table:
+SELECT * FROM `ExchangeRate`
+
+Also, SELECT * FROM `ExchangeRate` where id = 1
+Also, SELECT * FROM `ExchangeRate` limit = 2
+-> limit: shows the number of rows from the table; like "2" shows 2 rows of data,
+
+
+# Then, to update the table: 
+We edit it from pressing the "edit" in the row of the table that we want to update; 
+Syntax:
+UPDATE `ExchangeRate` SET `buy` = '159', `sell` = '180' WHERE `ExchangeRate`.`id` = 1;
+
+# In Update table, if 'WHERE' command is not mentioned, 
+then whole table changes and it cannot be undone afterwards.
+
+# Delete the row: ; the "Delete" command is given from the row.
+
+Syntax:
+DELETE FROM ExchangeRate WHERE `ExchangeRate`.`id` = 3;
+or, 
+DELETE FROM ExchangeRate WHERE id = 3;
+
+# In order to delete the unique id = 3;
+
+If "WHERE" clause in the Delete operation is not included, then it deletes the whole rows in the table.
+Syntax: DELETE FROM ExchangeRate;
+
+# Now, to connect the MySQL database server with python, we install the package in the virtual environment, we created
+Syntax: pip3 install mysql-connector-python
+
+# database server connected
+
+
+# Database can also be created through python in localhost/myphpAdmin 
+that is MySQL
+
+db = mysql.connector.connect(
+    host = "localhost",
+    user = "root",
+)
+print(db)
+myterminal = db.cursor()
+create_database = ""
+myterminal.execute(database)  #To execute the given command to insert
+db.commit()
+
+# commit in the database only.

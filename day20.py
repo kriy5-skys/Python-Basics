@@ -208,32 +208,30 @@ class Account():
     # accountnum = __accountNum
     
     def setAccount(self, accountNum, inBalance):
-        __acc_name = accountNum
-        __balance = inBalance
-
-        self.name = __acc_name
-        self.balance = __balance
+        self.__acc_name = accountNum
+        self.__balance = inBalance
 
     def deposit(self, amount):
-        amount = amount + self.balance
-        self.amount = amount
+        self.__balance += amount
     
     def getBalance(self):
-        return self.amount
+        return self.__balance
     
+    def newBalance(self, new_balance):
+        self.__balance = new_balance
+
     def displayAccount(self):
         return f'''--- Account Info ---
-Account Number: {self.name}
-Balance: {self.amount}
+Account Number: {self.__acc_name}
+Balance: {self.getBalance()}
 '''
 
 class SavingsAccount(Account):
     def setSavingsDetails(self, interest):
-        __interestRate = interest
-        self.rate = __interestRate + 0
+        self.__interestRate = interest
 
     def calculateInterest(self):
-        inte = self.getBalance() * (self.rate/100)
+        inte = self.getBalance() * (self.__interestRate/100)
         return inte
     
     def displaySavings(self):
@@ -244,12 +242,11 @@ Interests: {self.calculateInterest()}
 class PremiumSavings(SavingsAccount):
 
     def setBonus(self, bonus_amount):
-        __bonus = bonus_amount
-        self.bonuses = __bonus + 0
+        self.__bonus = bonus_amount
 
     def CalculateTotalBonus(self):
-        self.total = self.getBalance() + self.calculateInterest() + self.bonuses
-        self.amount = self.total
+        self.total = self.getBalance() + self.calculateInterest() + self.__bonus
+        self.newBalance(self.total)
         return self.total
 
     def checkStatus(self):
@@ -263,7 +260,7 @@ class PremiumSavings(SavingsAccount):
 {self.displayAccount()}
 {self.displaySavings()}
 --- Premium Info ---
-Bonus is: {self.bonuses}
+Bonus is: {self.__bonus}
 Total Balance: {self.CalculateTotalBonus()}
 
 You are our {self.checkStatus()}
@@ -277,13 +274,9 @@ bonus_amt = int(input("Enter bonus amount?: "))
 obj = PremiumSavings()
 
 obj.setAccount(accountm, balances)
-obj.deposit(1000)
-
 obj.setSavingsDetails(interestRate)
 obj.setBonus(bonus_amt)
-obj.deposit(1000)
 
 print(obj.displayPremium())
+
 print(obj.getBalance())
-# This is from 'a' mode from file handling.
-# This is from 'a' mode from file handling.

@@ -15,11 +15,15 @@
 # f.write("This is from 'a' mode from file handling.")
 # f.close()
 
+# In 'with' context, doesnot need to have the syntax to close the file; f.close()
+
 # # In both 'w', and 'a', if the file does not exist, then it creates new file.
 
 # f = open('test.txt','w')
 # f.write("This is a new file from 'w' mode in file handling.")
 # f.close()
+
+# r+ w+ a+
 
 import csv
 
@@ -37,4 +41,17 @@ with open("data.csv", "r") as file:
 
 print(a)
 
-# r+ w+ a+
+result = []
+
+with open("data.csv", "r") as file:
+    reader = csv.reader(file)
+
+    for index, row in enumerate(reader):
+        if index == 0:
+            continue
+            #next(reader) # This is also used like 
+        else:
+            print(i)
+
+print(a)
+
